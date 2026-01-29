@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ヤリーロⅥ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+<link rel="icon" href="images/ウーウーボ.webp">
+    <style>
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .rating-stars {
+            color: #fbbf24;
+        }
+
+        .rating-large {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        .character-card {
+            transition: transform 0.3s ease;
+
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .character-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .accordion-button:not(.collapsed)::after {
+            filter: invert(1) brightness(1.3) contrast(1.3);
+        }
+
+        .accordion-button::after {
+            filter: invert(0);
+        }
+
+
+        .stat-card {
+            background: linear-gradient(135deg, #4c1d95 0%, #312e81 100%);
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .action-btn {
+            transition: transform 0.2s ease;
+        }
+
+        .action-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .carousel-item img {
+            height: 400px;
+            object-fit: cover;
+            object-position: 50% 15%;
+            border-radius: 10px;
+        }
+
+        .float-link {
+            display: inline-block;
+            transition: transform .2s, box-shadow .2s;
+        }
+
+        .float-link:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-trash3"></i> 崩壊スターレイル
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-list.html">作品一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-ranking.html">ランキング</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-mylist.html">マイリスト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-community.html">コミュニティ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none" href="anime-login.html">ログイン</a>
+                    </li>
+                </ul>
+                <a href="anime-login.html" class="btn btn-light ms-3 d-none d-lg-block">
+                    <i class="bi bi-person-circle"></i> ログイン</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <!-- パンくずリスト -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">ホーム</a></li>
+                <li class="breadcrumb-item"><a href="anime-list.html">作品一覧</a></li>
+            </ol>
+        </nav>
+
+        <!-- 作品メイン情報 -->
+        <div class="row mb-5">
+            <div class="col-lg-8">
+                <!-- 画像カルーセル -->
+                <div id="animeCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="0"
+                            class="active"></button>
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="6"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="images/ベロブルグ.png" class="d-block w-100" alt="ベロブルグ">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>ベロブルグ</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/上層部.png" class="d-block w-100" alt="上層部">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>上層部</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/行政区 クリフォト城.png" class="d-block w-100" alt="クリフォト城">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>行政区 クリフォト城</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/下層部.png" class="d-block w-100" alt="下層部">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>下層部</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/ファイトクラブ.png" class="d-block w-100" alt="ファイトクラブ">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>ファイトクラブ</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/リベットタウン 孤児院.png" class="d-block w-100" alt="リベットタウン 孤児院">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>ホーム サポート部分</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/行政区 常冬の碑.png" class="d-block w-100" alt="行政区 常冬の碑">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>常冬の碑</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#animeCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                        <span class="visually-hidden">前へ</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#animeCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                        <span class="visually-hidden">次へ</span>
+                    </button>
+                </div>
+
+                <!-- タイトルと基本情報 -->
+                <div class="mb-4">
+                    <h1 class="display-4 fw-bold mb-3">ヤリーロⅥ</h1>
+                </div>
+
+                <!-- あらすじ -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h3 class="card-title fw-bold mb-3"><i class="bi bi-book"></i> ヤリーロⅥについて</h3>
+                        <p class="card-text">
+                            多くの歴史学者は、ヤリーロ-VIの星の歴史は千年前の神話時代の戦争まで遡ると主張する、ペルーン人11カ国とヴェーレス集団軍の苛酷な戦争は長く続いた。そして早い春の訪れが戦局を徹底的に変え、ヴェーレス人が勝利を掴み取った。彼らは春の戦神ヤリーロの祝福あってこそ宿敵を消滅できたと信じ、その名を冠した詩篇で大地を賛美した。現在記録されている惑星の名称——「ヤリーロ-VI」は恐らく詩篇の内容を含めてしまった誤訳によるもの。
+                        </p>
+                        <p class="card-text">
+                            神話の戦争が終わり、ヤリーロ-VIは長き平和を享受した。文明は刀耕火種の時代から星間航行を行うまでに至ったが、ヤリーロ-VIは資源が乏しい星だった。急激な発展はヤリーロ-VIに先端科学をもたらすと同時に、その歴史に終結の審判を下した。資源の枯渇、星核の落下、そして氷河期の到来…数多の災難が、ヤリーロ-VIの輝くしくも短い文明を完全に葬り去ったのである
+                        </p>
+                        <p class="card-text">
+                            氷河期の中で生きる難民たちは「ヤリーロ」の名を忘れ、星の片隅で寒波から逃れるための都市「ベロブルグ」を作り、文明の火を再び灯した。しかし、その閉鎖的で危険な自然環境が原因となり、ヤリーロ-VIは「万界の癌」の出現後、他の世界と連絡が取れなくなってしまう。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 作品情報アコーディオン -->
+                <div class="accordion mb-4" id="animeInfoAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#staffInfo">
+                                <i class="bi bi-people-fill me-2"></i> 歴代の大守護者
+                            </button>
+                        </h2>
+                        <div id="staffInfo" class="accordion-collapse collapse show"
+                            data-bs-parent="#animeInfoAccordion">
+                            <div class="accordion-body">
+                                <div>
+                                    <strong>アリサ・ランド</strong><br>
+                                    <strong>スベトラーナ・ランド</strong><br>
+                                    <strong>アレキサンドラ・ランド</strong><br>
+                                    <strong>アリーナ・ランド</strong><br>
+                                    <strong>タチアナ・ランド</strong><br>
+                                    <strong>セリル・ランド</strong><br>
+                                    <strong>カカリア・ランド</strong><br>
+                                    <strong>ブローニャ・ランド</strong><br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#broadcastInfo">
+                                <i class="bi bi-tv me-2"></i> 主要NPC
+                            </button>
+                        </h2>
+                        <div id="broadcastInfo" class="accordion-collapse collapse"
+                            data-bs-parent="#animeInfoAccordion">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="mb-3">
+                                        <strong>ベロブルグの守護者：</strong> カカリア
+                                    </div>
+                                    <div class="mb-3">
+                                        <strong>「地炎」のボス：</strong> オレグ
+                                    </div>
+                                    <div class="mb-3">
+                                        <strong>プロト機3号——「監督ロボット」：</strong> スヴァローグ
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#musicInfo">
+                                <i class="bi bi-music-note-beamed me-2"></i> ヤリーロⅥBGM
+                            </button>
+                        </h2>
+                        <div id="musicInfo" class="accordion-collapse collapse" data-bs-parent="#animeInfoAccordion">
+                            <div class="accordion-body" style="max-height: 300px; overflow-y: auto">
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 余燼<br>
+                                    <strong>再生エリア:</strong> 行政区<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 炉火<br>
+                                    <strong>再生エリア:</strong> 行政区<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 喧噪<br>
+                                    <strong>再生エリア:</strong> ボルダータウン<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 消え逝く太陽<br>
+                                    <strong>再生エリア:</strong> 大鉱区<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 寒冷の道<br>
+                                    <strong>再生エリア:</strong> 外縁通路・シルバーメイン禁区<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 暖陽<br>
+                                    <strong>再生エリア:</strong> 花屋「ソルスティシャル」<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 熟睡<br>
+                                    <strong>再生エリア:</strong> ゲーテホテル・歴史文化博物館<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 静かな雪<br>
+                                    <strong>再生エリア:</strong> 花屋「ソルスティシャル」前の女性のギター<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 賢氷<br>
+                                    <strong>再生エリア:</strong> 残響回廊<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 在りし日の影<br>
+                                    <strong>再生エリア:</strong> リベットタウン<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 猛炎<br>
+                                    <strong>再生エリア:</strong> 闘技エキシビジョン<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 戦いが始まる<br>
+                                    <strong>再生エリア:</strong> ファイトクラブ<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 寒波の下<br>
+                                    <strong>再生エリア:</strong> 郊外雪原<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 常冬<br>
+                                    <strong>再生エリア:</strong> 常冬峰<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 寒鉄と暖陽<br>
+                                    <strong>再生エリア:</strong> 造物の柱<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 競技場<br>
+                                    <strong>再生エリア:</strong> 旧武器実験場<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 秩序<br>
+                                    <strong>再生エリア:</strong> 郊外雪原・外縁通路・残響回廊・常冬峰(戦闘)<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 冬を破りて<br>
+                                    <strong>再生エリア:</strong> 外縁通路(凝結虚影)・シルバーメイン禁区(戦闘)・残響回廊(凝結虚影、侵蝕トンネル)・常冬峰(侵蝕トンネル)<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 火種<br>
+                                    <strong>再生エリア:</strong> 大鉱区(戦闘)<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 地下<br>
+                                    <strong>再生エリア:</strong> 大鉱区(精鋭)<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- サイドバー -->
+            <div class="col-lg-4">
+                <!-- 評価カード -->
+                <div class="stat-card mb-4">
+                    <div class="text-center">
+                        <div class="rating-large mb-2">4.5</div>
+                        <div class="rating-stars fs-3 mb-3">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="mb-0"><a href="anime-review.html"
+                                class="link-light link-underline link-underline-opacity-0 link-underline-opacity-100-hover float-link">1,234件のレビュー</a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- アクションボタン -->
+                <div class="d-grid gap-2 mb-4">
+                    <button class="btn btn-primary btn-lg action-btn">
+                        <i class="bi bi-star"></i> マイリストに追加
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg action-btn">
+                        <i class="bi bi-pencil-square"></i> レビューを書く
+                    </button>
+                    <button class="btn btn-outline-secondary btn-lg action-btn">
+                        <i class="bi bi-share"></i> シェアする
+                    </button>
+                </div>
+
+                <!-- 統計情報 -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3"><i class="bi bi-bar-chart-fill"></i> 統計情報</h5>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>視聴中</span>
+                                <strong>8,234人</strong>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-success" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>視聴済み</span>
+                                <strong>2,456人</strong>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-primary" style="width: 40%"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-1">
+                                <span>視聴予定</span>
+                                <strong>15,678人</strong>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar bg-warning" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- タグ -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3"><i class="bi bi-tags-fill"></i> タグ</h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="badge bg-info">#異世界転生</span>
+                            <span class="badge bg-info">#勇者</span>
+                            <span class="badge bg-info">#魔法</span>
+                            <span class="badge bg-info">#冒険</span>
+                            <span class="badge bg-info">#成長</span>
+                            <span class="badge bg-info">#仲間</span>
+                            <span class="badge bg-info">#バトル</span>
+                            <span class="badge bg-info">#感動</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 関連リンク -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title fw-bold mb-3"><i class="bi bi-link-45deg"></i> 関連リンク</h5>
+                        <ul class="list-unstyled">
+                            <li class="mb-2">
+                                <a href="#" class="text-decoration-none">
+                                    <i class="bi bi-globe"></i> 公式サイト
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="text-decoration-none">
+                                    <i class="bi bi-twitter-x"></i> 公式X
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="#" class="text-decoration-none">
+                                    <i class="bi bi-youtube"></i> 公式YouTube
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-decoration-none">
+                                    <i class="bi bi-book"></i> 原作小説
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- キャラクター紹介 -->
+        <section class="mb-5">
+            <h2 class="fw-bold mb-4"><i class="bi bi-people-fill"></i> キャラクター紹介</h2>
+
+            <div class="accordion" id="characterAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#mainCharacters">
+                            登場するキャラクター
+                        </button>
+                    </h2>
+                    <div id="mainCharacters" class="accordion-collapse collapse show"
+                        data-bs-parent="#characterAccordion">
+                        <div class="accordion-body">
+                            <div class="row g-4"
+                                style="display: flex; flex-wrap: nowrap;overflow-x: auto; padding-bottom: 8px;">
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/ブローニャ.webp" class="card-img-top character-img" alt="ブローニャ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ブローニャ</h5>
+                                            <p class="text-muted small mb-2">CV: 阿澄佳奈</p>
+                                            <p class="card-text small">
+                                                ベロブルグの「大守護者」の継承者。姫としての高貴さと、軍人としての堅実さを兼ね備えている。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/ジェパード.webp" class="card-img-top character-img" alt="ジェパード">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ジェパード</h5>
+                                            <p class="text-muted small mb-2">CV: 古川慎</p>
+                                            <p class="card-text small">
+                                                シルバーメインの戍衛官、ベロブルグで指折りの戦士。裏表がなく、几帳面で、仕事を怠けたことがない。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/ペラ.webp" class="card-img-top character-img" alt="ペラ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ペラ</h5>
+                                            <p class="text-muted small mb-2">CV: 諸星すみれ</p>
+                                            <p class="card-text small">
+                                                シルバーメインの情報官。真面目な性格で、シルバーメインのメンバーたちから尊敬されている。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/ナターシャ.webp" class="card-img-top character-img" alt="ナターシャ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ナターシャ
+                                            </h5>
+                                            <p class="text-muted small mb-2">CV: 内山夕実</p>
+                                            <p class="card-text small">べロブルグ下層部の医者、子供たちの面倒を見ている。穏やかで親しみやすい性格だが、怖い一面もある。。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/ゼーレ.webp" class="card-img-top character-img" alt="ゼーレ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ゼーレ</h5>
+                                            <p class="text-muted small mb-2">CV: 中原麻衣</p>
+                                            <p class="card-text small">地下反抗組織「地炎」の中堅、通称「バーブチカ」。さっぱりした性格だが、繊細で敏感な一面もある。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/サンポ.webp" class="card-img-top character-img" alt="サンポ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">サンポ</h5>
+                                            <p class="text-muted small mb-2">CV: 平川大輔</p>
+                                            <p class="card-text small">地上と地下を行き来する商人。馴れ馴れしく、情熱的でユーモアがあり、いつも道化を演じている。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/セーバル.webp" class="card-img-top character-img" alt="セーバル">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">セーバル</h5>
+                                            <p class="text-muted small mb-2">CV: 愛美</p>
+                                            <p class="card-text small">
+                                                ベロブルグの機械工、前職は建創者の技術部門の研究員。ジェパード・ランドゥーの姉だが、弟とはまったく異なる性格をしている。大寒波が訪れる前に存在した「ロック」という古典音楽を熱愛している
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/フック.webp" class="card-img-top character-img" alt="フック">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">フック</h5>
+                                            <p class="text-muted small mb-2">CV: 徳井青空</p>
+                                            <p class="card-text small">地下冒険団「モグラ党」の親分（自称）。自由を愛する彼女は、日々の生活を冒険の一幕だと考えている。
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/クラーラ.webp" class="card-img-top character-img" alt="クラーラ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">クラーラ</h5>
+                                            <p class="text-muted small mb-2">CV: 日高里菜＆安元洋貴</p>
+                                            <p class="card-text small">
+                                                機械と一緒に暮らしている流浪の少女。内向的で優しく、純粋な心を持っている。下層部の人々が互いの「家族」になることを願っている。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/ルカ.webp" class="card-img-top character-img" alt="ルカ">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">ルカ</h5>
+                                            <p class="text-muted small mb-2">CV: 梶原岳人</p>
+                                            <p class="card-text small">
+                                                機械と一緒に暮らしている流浪の少女。内向的で優しく、純粋な心を持っている。下層部の人々が互いの「家族」になることを願っている。</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="card character-card h-100">
+                                        <img src="images/リンクす.webp" class="card-img-top character-img" alt="リンクス">
+                                        <div class="card-body">
+                                            <h5 class="card-title fw-bold">リンクス</h5>
+                                            <p class="text-muted small mb-2">CV: 照井春佳</p>
+                                            <p class="card-text small">
+                                                ベロブルグの雪原探検家、ランドゥー家の末っ子。落ち着いた性格で、極めて強い行動力の持ち主。よく単身で雪原を探検する</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- フッター -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-film"></i> AnimeHub</h5>
+                    <p class="text-light">あなたの好きなアニメを見つけて、共有しよう。</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サイト情報</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">利用規約</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">プライバシー</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サポート</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">ヘルプ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">お問い合わせ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold mb-3">フォローする</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-discord fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light">
+            <p class="text-center text-light mb-0">&copy; 2025 AnimeHub. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="backToTopBtn" class="btn shadow d-flex align-items-center justify-content-center">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+[]
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+</body>
+
+</html>

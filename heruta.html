@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>異世界の勇者 ～運命の旅路～ - AnimeHub</title>
+    <title>宇宙ステーションヘルタ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="base.css">
-    <link rel="icon" href="favicon.png">
+<link rel="icon" href="images/ウーウーボ.webp">
     <style>
         .hero-image {
             width: 100%;
@@ -96,10 +96,10 @@
 
 <body>
     <!-- ナビゲーションバー -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html">
-                <i class="bi bi-film"></i> AnimeHub
+                <i class="bi bi-trash3"></i> 崩壊スターレイル
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -137,7 +137,6 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="index.html">ホーム</a></li>
                 <li class="breadcrumb-item"><a href="anime-list.html">作品一覧</a></li>
-                <li class="breadcrumb-item active" aria-current="page">異世界の勇者 ～運命の旅路～</li>
             </ol>
         </nav>
 
@@ -152,30 +151,51 @@
                         <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="1"></button>
                         <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="2"></button>
                         <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="3"></button>
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="4"></button>
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="5"></button>
+                        <button type="button" data-bs-target="#animeCarousel" data-bs-slide-to="6"></button>
                     </div>
                     <div class="carousel-inner">
+                        <div class="carousel-item">
+                            <img src="images/宇宙.png" class="d-block w-100" alt="宇宙">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>宇宙ステーションヘルタ</h5>
+                            </div>
+                        </div>
                         <div class="carousel-item active">
-                            <img src="images/異世界の勇者 ～運命の旅路～.webp" class="d-block w-100" alt="メインビジュアル">
+                            <img src="images/ヘルタ１.png" class="d-block w-100" alt="主制御部分">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-                                <h5>メインビジュアル</h5>
+                                <h5>主制御部分</h5>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="images/battle.webp" class="d-block w-100" alt="バトルシーン">
+                            <img src="images/ヘルタ６.png" class="d-block w-100" alt="防御と監視システム">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-                                <h5>迫力のバトルシーン</h5>
+                                <h5>防御と監視システム</h5>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="images/ordinary.webp" class="d-block w-100" alt="日常シーン">
+                            <img src="images/ヘルタ７.png" class="d-block w-100" alt="監察区 主制御部分">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-                                <h5>仲間との日常</h5>
+                                <h5>監察区 主制御部分</h5>
                             </div>
                         </div>
                         <div class="carousel-item">
-                            <img src="images/scenery.webp" class="d-block w-100" alt="異世界の風景">
+                            <img src="images/ヘルタ３.png" class="d-block w-100" alt="シャドウギャラリー 収容部分">
                             <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
-                                <h5>美しい異世界の風景</h5>
+                                <h5>シャドウギャラリー 収容部分</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/ヘルタ４.png" class="d-block w-100" alt="ホーム サポート部分">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>ホーム サポート部分</h5>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="images/ヘルタ９.png" class="d-block w-100" alt="封鎖部分">
+                            <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-2">
+                                <h5>封鎖部分</h5>
                             </div>
                         </div>
                     </div>
@@ -193,28 +213,23 @@
 
                 <!-- タイトルと基本情報 -->
                 <div class="mb-4">
-                    <div class="d-flex gap-2 mb-3">
-                        <span class="badge bg-primary fs-6">ファンタジー</span>
-                        <span class="badge bg-warning text-dark fs-6">アクション</span>
-                        <span class="badge bg-success fs-6">放送中</span>
-                        <span class="badge bg-danger fs-6">人気</span>
-                    </div>
-                    <h1 class="display-4 fw-bold mb-3">異世界の勇者 ～運命の旅路～</h1>
-                    <p class="lead text-muted">Isekai no Yuusha: Unmei no Tabiji</p>
+                    <h1 class="display-4 fw-bold mb-3">宇宙ステーションヘルタ</h1>
                 </div>
 
                 <!-- あらすじ -->
                 <div class="card mb-4">
                     <div class="card-body">
-                        <h3 class="card-title fw-bold mb-3"><i class="bi bi-book"></i> あらすじ</h3>
+                        <h3 class="card-title fw-bold mb-3"><i class="bi bi-book"></i> 宇宙ステーションヘルタについて</h3>
                         <p class="card-text">
-                            平凡な高校生・佐藤翔太は、ある日突然異世界に召喚される。そこは魔法と剣が支配する世界で、翔太は伝説の勇者として世界を救う使命を背負うことになる。
+                            普遍的な世界の法則に満足していなかったヘルタは、銀河の未知なる存在に目を向け、彼方の神秘なら自分の好奇心を満たしてくれるのではないかと期待した。
                         </p>
                         <p class="card-text">
-                            最初は戸惑いながらも、仲間たちとの出会いを通じて成長していく翔太。魔王軍との戦い、王国の陰謀、そして自分自身の運命と向き合いながら、真の勇者へと成長していく物語。
+                            そこで彼女は博物館式の宇宙船を建造し、それを惑星の軌道に打ち上げ、「一切の怪異を星空に封印する」研究を開始した。
+                            こうして誕生したのが、宇宙ステーション「ヘルタ」である。
                         </p>
                         <p class="card-text">
-                            笑いあり、涙あり、感動ありの王道ファンタジーアクション!仲間との絆、勇気、そして希望を描いた壮大な冒険譚が今、始まる!
+                            宇宙ステーション「ヘルタ」は「天才クラブ」#83のヘルタが所有している。
+                            ステーションの人員構成は複雑で、研究者は「スタッフ」と呼ばれており、入所後は研究の方向性や得意分野に応じて異なる「課」に配属される。
                         </p>
                     </div>
                 </div>
@@ -225,31 +240,22 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#staffInfo">
-                                <i class="bi bi-people-fill me-2"></i> スタッフ情報
+                                <i class="bi bi-people-fill me-2"></i> 部署
                             </button>
                         </h2>
                         <div id="staffInfo" class="accordion-collapse collapse show"
                             data-bs-parent="#animeInfoAccordion">
                             <div class="accordion-body">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <strong>原作:</strong> 山田太郎
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>監督:</strong> 鈴木一郎
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>シリーズ構成:</strong> 田中花子
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>キャラクターデザイン:</strong> 佐藤美咲
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>音楽:</strong> 高橋健太
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>アニメーション制作:</strong> A-1 Pictures
-                                    </div>
+                                <div>
+                                    <strong>星域界種課</strong><br>
+                                    <strong>万有応物課</strong><br>
+                                    <strong>光淵密巻課</strong><br>
+                                    <strong>宇宙地理課</strong><br>
+                                    <strong>銀河法政課</strong><br>
+                                    <strong>防衛課</strong><br>
+                                    <strong>メンテナンス課</strong><br>
+                                    <strong>医療課</strong><br>
+                                    <strong>奇物再収容チーム</strong><br>
                                 </div>
                             </div>
                         </div>
@@ -259,27 +265,27 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#broadcastInfo">
-                                <i class="bi bi-tv me-2"></i> 放送情報
+                                <i class="bi bi-tv me-2"></i> 主要NPC
                             </button>
                         </h2>
                         <div id="broadcastInfo" class="accordion-collapse collapse"
                             data-bs-parent="#animeInfoAccordion">
                             <div class="accordion-body">
                                 <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <strong>放送時期:</strong> 2024年秋
+                                    <div class="mb-3">
+                                        <strong>宇宙ステーション「ヘルタ」法政課創始者：</strong> ガン
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>話数:</strong> 全24話(予定)
+                                    <div class="mb-3">
+                                        <strong>宇宙ステーション「ヘルタ」界種課の課長：</strong> シンクル
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>放送局:</strong> TOKYO MX、BS11 他
+                                    <div class="mb-3">
+                                        <strong>宇宙ステーション「ヘルタ」密巻課の元老：</strong> メイア
                                     </div>
-                                    <div class="col-md-6 mb-3">
-                                        <strong>放送日時:</strong> 毎週土曜 24:00〜
+                                    <div class="mb-3">
+                                        <strong>宇宙ステーション「ヘルタ」応物課の課長：</strong> 温明徳
                                     </div>
                                     <div class="col-md-12 mb-3">
-                                        <strong>配信:</strong> Amazon Prime Video、Netflix、U-NEXT、dアニメストア
+                                        <strong>宇宙ステーション「ヘルタ」：</strong> ヘルタNPC
                                     </div>
                                 </div>
                             </div>
@@ -290,22 +296,62 @@
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#musicInfo">
-                                <i class="bi bi-music-note-beamed me-2"></i> 主題歌・音楽
+                                <i class="bi bi-music-note-beamed me-2"></i> 宇宙ステーション「ヘルタ」BGM
                             </button>
                         </h2>
                         <div id="musicInfo" class="accordion-collapse collapse" data-bs-parent="#animeInfoAccordion">
-                            <div class="accordion-body">
+                            <div class="accordion-body" style="max-height: 300px; overflow-y: auto">
                                 <div class="mb-3">
-                                    <strong>オープニングテーマ:</strong><br>
-                                    「運命の扉」 / SPYAIR
+                                    <strong>曲名　　　:</strong> 星海漫遊<br>
+                                    <strong>再生エリア:</strong> 主制御部分<br>
                                 </div>
                                 <div class="mb-3">
-                                    <strong>エンディングテーマ:</strong><br>
-                                    「明日への道」 / Aimer
+                                    <strong>曲名　　　:</strong> SF小説<br>
+                                    <strong>再生エリア:</strong> ベース部分・収容部分<br>
                                 </div>
-                                <div>
-                                    <strong>劇伴:</strong><br>
-                                    澤野弘之
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 没入感<br>
+                                    <strong>再生エリア:</strong> ヘルタのオフィス<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> ミステリー映画<br>
+                                    <strong>再生エリア:</strong> サポート部分<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 摩訶不思議<br>
+                                    <strong>再生エリア:</strong> 封鎖部分<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 魂の奥底<br>
+                                    <strong>再生エリア:</strong> 模擬宇宙<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 蝕まれし星の古き夢<br>
+                                    <strong>再生エリア:</strong> 宇宙の蝗害<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 原始の黄金<br>
+                                    <strong>再生エリア:</strong> 黄金と機械<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 皇帝が遺した夢<br>
+                                    <strong>再生エリア:</strong> 不可知域<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> クライシス<br>
+                                    <strong>再生エリア:</strong> ベース部分・収容部分(戦闘)<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 絶体絶命<br>
+                                    <strong>再生エリア:</strong> サポート部分・封鎖部分(戦闘)<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> 一触即発<br>
+                                    <strong>再生エリア:</strong> 凝結虚影(戦闘)<br>
+                                </div>
+                                <div class="mb-3">
+                                    <strong>曲名　　　:</strong> オルタナティヴ・ロック<br>
+                                    <strong>再生エリア:</strong> 模擬宇宙(戦闘)<br>
                                 </div>
                             </div>
                         </div>
@@ -429,112 +475,75 @@
 
         <!-- キャラクター紹介 -->
         <section class="mb-5">
-            <h2 class="fw-bold mb-4"><i class="bi bi-people-fill"></i> キャラクター</h2>
+            <h2 class="fw-bold mb-4"><i class="bi bi-people-fill"></i> キャラクター紹介</h2>
 
             <div class="accordion" id="characterAccordion">
                 <div class="accordion-item">
                     <h2 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
                             data-bs-target="#mainCharacters">
-                            メインキャラクター
+                            登場するキャラクター
                         </button>
                     </h2>
                     <div id="mainCharacters" class="accordion-collapse collapse show"
                         data-bs-parent="#characterAccordion">
                         <div class="accordion-body">
-                            <div class="row g-4">
+                            <div class="row g-4"
+                                style="display: flex; flex-wrap: nowrap;overflow-x: auto; padding-bottom: 8px;">
                                 <div class="col-md-3">
                                     <div class="card character-card h-100">
-                                        <img src="images/syouta.webp" class="card-img-top character-img" alt="佐藤翔太">
+                                        <img src="images/アーラン.webp" class="card-img-top character-img" alt="アーラン">
                                         <div class="card-body">
-                                            <h5 class="card-title fw-bold">佐藤翔太</h5>
-                                            <p class="text-muted small mb-2">CV: 梶裕貴</p>
-                                            <p class="card-text small">本作の主人公。平凡な高校生だったが、異世界に召喚され勇者となる。正義感が強く仲間思い。</p>
+                                            <h5 class="card-title fw-bold">アーラン</h5>
+                                            <p class="text-muted small mb-2">CV: 白石涼子</p>
+                                            <p class="card-text small">
+                                                宇宙ステーション「ヘルタ」の防衛課責任者。口下手だが、研究を大切にしているスタッフたちがそれぞれの研究を成し遂げられるよう、彼らを命懸けで守ろうとしている
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="card character-card h-100">
-                                        <img src="images/erina.webp" class="card-img-top character-img" alt="エリナ">
+                                        <img src="images/アスター.webp" class="card-img-top character-img" alt="アスター">
                                         <div class="card-body">
-                                            <h5 class="card-title fw-bold">エリナ・フォルテシア</h5>
-                                            <p class="text-muted small mb-2">CV: 早見沙織</p>
-                                            <p class="card-text small">王国の第一王女。魔法の才能に優れ、翔太の最初の仲間となる。気高く優雅だが意外とドジ。</p>
+                                            <h5 class="card-title fw-bold">アスター</h5>
+                                            <p class="text-muted small mb-2">CV: 赤崎千夏</p>
+                                            <p class="card-text small">
+                                                宇宙ステーション「ヘルタ」の所長を務める、名門出身のお嬢様。好奇心旺盛な天文学者で、癖のある宇宙ステーションのスタッフたちをまとめるのが得意。
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="card character-card h-100">
-                                        <img src="images/ryuu.webp" class="card-img-top character-img" alt="リュウ">
+                                        <img src="images/ヘルタキャラ.webp" class="card-img-top character-img" alt="ヘルタ">
                                         <div class="card-body">
-                                            <h5 class="card-title fw-bold">リュウ・ドラゴニア</h5>
-                                            <p class="text-muted small mb-2">CV: 中村悠一</p>
-                                            <p class="card-text small">竜族の戦士。剣の達人で、クールな性格だが仲間への信頼は厚い。</p>
+                                            <h5 class="card-title fw-bold">ヘルタ</h5>
+                                            <p class="text-muted small mb-2">CV: 山崎はるか</p>
+                                            <p class="card-text small">
+                                                「天才クラブ」#83、宇宙ステーションの真の主。人に勝る知恵を持つが、まったく共感力がない大科学者。</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="card character-card h-100">
-                                        <img src="images/runa.webp" class="card-img-top character-img" alt="ルナ">
+                                        <img src="images/ルアン・メェイ.webp" class="card-img-top character-img" alt="ルアン・メェイ">
                                         <div class="card-body">
-                                            <h5 class="card-title fw-bold">ルナ・シルフィード</h5>
-                                            <p class="text-muted small mb-2">CV: 花澤香菜</p>
-                                            <p class="card-text small">エルフ族の弓使い。明るく元気な性格でムードメーカー。回復魔法も得意。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#subCharacters">
-                            サブキャラクター
-                        </button>
-                    </h2>
-                    <div id="subCharacters" class="accordion-collapse collapse" data-bs-parent="#characterAccordion">
-                        <div class="accordion-body">
-                            <div class="row g-4">
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/king.webp" class="card-img-top character-img" alt="アルフレッド王">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">アルフレッド王</h5>
-                                            <p class="text-muted small mb-2">CV: 大塚明夫</p>
-                                            <p class="card-text small">王国を治める賢王。翔太を勇者として召喚した張本人。</p>
+                                            <h5 class="card-title fw-bold">ルアン・メェイ</h5>
+                                            <p class="text-muted small mb-2">CV: 大西沙織</p>
+                                            <p class="card-text small">天才クラブのメンバー、生命科学の専門家。ヘルタたちと協力して模擬宇宙を開発した。</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="card character-card h-100">
-                                        <img src="images/devil.webp" class="card-img-top character-img" alt="魔王">
+                                        <img src="images/マダム・ヘルタ.webp" class="card-img-top character-img" alt="マダム・ヘルタ">
                                         <div class="card-body">
-                                            <h5 class="card-title fw-bold">魔王ゼノン</h5>
-                                            <p class="text-muted small mb-2">CV: 子安武人</p>
-                                            <p class="card-text small">世界を脅かす魔王。圧倒的な力を持つが、その真意は謎に包まれている。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/wiseman.webp" class="card-img-top character-img" alt="賢者">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">賢者マーリン</h5>
-                                            <p class="text-muted small mb-2">CV: 速水奨</p>
-                                            <p class="card-text small">古代から生きる大賢者。翔太たちに助言を与える。</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="card character-card h-100">
-                                        <img src="images/merchant.webp" class="card-img-top character-img" alt="商人">
-                                        <div class="card-body">
-                                            <h5 class="card-title fw-bold">商人ギルバート</h5>
-                                            <p class="text-muted small mb-2">CV: 杉田智和</p>
-                                            <p class="card-text small">各地を旅する商人。翔太たちに武器や道具を提供する。</p>
+                                            <h5 class="card-title fw-bold">マダム・ヘルタ</h5>
+                                            <p class="text-muted small mb-2">CV: 大西沙織</p>
+                                            <p class="card-text small">尊貴なる「天才クラブ」#83。人類で、女性で、若く、美しく、そして可愛い。
+                                                噂によると、彼女は銀河の辺境でひっそりと暮らしており、そこから離れることは滅多にないという。そんな彼女が今回姿を現したのは、おそらく――
+                                                自ら対処しなければならない問題が起きたからだろう。</p>
                                         </div>
                                     </div>
                                 </div>

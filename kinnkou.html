@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <title>均衡の星神</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+<link rel="icon" href="images/ウーウーボ.webp">
+</head>
+
+<style>
+    .anime-card img {
+        width: 100%;
+        height: 30vw;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .ranking-card {
+        transition: transform 0.2s ease;
+    }
+
+    .ranking-card img {
+        width: auto;
+        height: 150px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .ranking-card:hover {
+        transform: scale(1.02);
+    }
+
+    .ranking-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        opacity: 0.2;
+    }
+
+    @media (max-width: 767.98px) {
+        .anime-card img {
+            object-position: 50% 40%;
+        }
+    }
+
+    body {
+        background-image: url("images/背景.jpg");
+        background-size: cover;
+        /* 画面いっぱいに表示 */
+        background-repeat: no-repeat;
+        /* 繰り返さない */
+        background-position: center;
+        /* 中央に配置 */
+    }
+</style>
+
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-trash3"></i> 崩壊スターレイル
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-list.html">作品一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-ranking.html">ランキング</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-mylist.html">マイリスト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-community.html">コミュニティ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none" href="anime-login.html">ログイン</a>
+                    </li>
+                </ul>
+                <a href="anime-login.html" class="btn btn-light ms-3 d-none d-lg-block">
+                    <i class="bi bi-person-circle"></i> ログイン</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2 col-lg-6 align-items-center mt-2">
+                <img src="images/均衡の星神.webp" alt="神秘" class="img-fluid rounded">
+            </div>
+            <div class="col-md-3 col-lg-6 align-items-center mt-2">
+                <table class="mt-5">
+                    <tr>
+                        <td class="h1 text-light">星神</td>
+                        <td class="h1 text-light">『均衡』互</td>
+                    </tr>
+                </table><br>
+                <p class="text-warning mt-3">
+                    <i>「私はこっそりと金色のおもりを持ち去り、それによって起きたさざ波を得意げに思った。互は常に私の悪だくみを見抜き、星々は目盛りを再び0に戻す」<br>
+                    　――エイドリアン・スペンサー-スミス『星空の寓話集』</i>
+                </p>
+                <p class="text-light">
+                    凡人がよく口にしている因果の連鎖は事態の背後にある煩雑なトポロジーの大まかな概略に過ぎない――「互」は自身の意思を宇宙移動理論の中に溶け込ませ、永劫に世の万物の平衡、安定を維持している。<br>
+                    物好きな者は、飽くことなくシステムの抜け穴を探し、知恵が星神よりあると思っている。自分がとっくに監視された数列に成り下がり、互の編んだ精密なネットワークから逃げられないことに気づいていない。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-trash3"></i> 崩壊スターレイル</h5>
+                    <p class="text-light">あなたの好きなアニメを見つけて、共有しよう。</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サイト情報</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">利用規約</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">プライバシー</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サポート</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">ヘルプ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">お問い合わせ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold mb-3">フォローする</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-discord fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light">
+            <p class="text-center text-light mb-0">&copy; 2025 AniListo. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="backToTopBtn" class="btn shadow d-flex align-items-center justify-content-center">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+</body>
+
+</html>

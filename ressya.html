@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <title>星穹列車</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="base.css">
+<link rel="icon" href="images/ウーウーボ.webp">
+</head>
+
+<style>
+    .anime-card img {
+        width: 100%;
+        height: 30vw;
+        max-height: 300px;
+        object-fit: cover;
+    }
+
+    .ranking-card {
+        transition: transform 0.2s ease;
+    }
+
+    .ranking-card img {
+        width: auto;
+        height: 150px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .ranking-card:hover {
+        transform: scale(1.02);
+    }
+
+    .ranking-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--primary-color);
+        opacity: 0.2;
+    }
+
+    @media (max-width: 767.98px) {
+        .anime-card img {
+            object-position: 50% 40%;
+        }
+    }
+
+    body {
+        background-image: url("images/1号車.png");
+        background-size: cover;
+        /* 画面いっぱいに表示 */
+        background-repeat: no-repeat;
+        /* 繰り返さない */
+        background-position: center;
+        /* 中央に配置 */
+    }
+
+    .card-img-fit {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .scroll-container {
+        scroll-behavior: smooth;
+        height: 400px;
+        overflow-y: auto;
+        padding: 1rem;
+    }
+
+    h4 {
+        scroll-margin-top: 20px;
+    }
+
+    .bg-gray-transparent {
+        background-color: rgba(0, 0, 0, 0.502);
+    }
+</style>
+
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-trash3"></i> 崩壊スターレイル
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-list.html">作品一覧</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-ranking.html">ランキング</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-mylist.html">マイリスト</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="anime-community.html">コミュニティ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link d-lg-none" href="anime-login.html">ログイン</a>
+                    </li>
+                </ul>
+                <a href="anime-login.html" class="btn btn-light ms-3 d-none d-lg-block">
+                    <i class="bi bi-person-circle"></i> ログイン</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="d-flex mt-4">
+        <h2 class="fw-bold text-light">
+            <i class="bi bi-train-freight-front text-warning"></i> ナナシビト
+        </h2>
+    </div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-3">
+                <nav id="toc" class="nav flex-column nav-pills">
+                    <a class="nav-link text-info" href="#section1">丹恒</a>
+                    <a class="nav-link text-info" href="#section2">三月なのか</a>
+                    <a class="nav-link text-info" href="#section3">姫子</a>
+                    <a class="nav-link text-info" href="#section4">ヴェルト・ヨウ</a>
+                    <a class="nav-link text-info" href="#section5">サンデー</a>
+                    <a class="nav-link text-info" href="#section6">開拓者</a>
+                </nav>
+            </div>
+            <div class="col-9 scroll-container position-relative" data-bs-spy="scroll" data-bs-target="#toc"
+                data-bs-offset="20" tabindex="0">
+                <div class="card  mx-auto col-md-9 row g-3 mt-5" id="section1">
+                    <div class="card-body mt-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <img src="images/丹恒.jpg" class="img-fluid rounded" alt="丹恒">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title"> 丹恒</h5>
+                                <p class="card-muted"><small class="text-body-secondary"></small><small
+                                        class="text-muted">
+                                        CV
+                                        伊東健人</small></p>
+                                <p class="card-text">
+                                    自分の過去をひた隠しにしている、凛とした無口な青年。同族を避けるため、星穹列車に同行することを決めた。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="height: 300px;">　</p>
+                <div class="card  mx-auto col-md-9 row g-3 mx-auto mt-5" id="section2">
+                    <div class="card-body mt-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <img src="images/三月なのか.webp" class="img-fluid rounded" alt="三月なのか">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title"> 三月なのか</h5>
+                                <p class="card-muted"><small class="text-body-secondary"></small><small
+                                        class="text-muted">
+                                        CV
+                                        小倉唯</small></p>
+                                <p class="card-text">
+                                    かつて恒氷の中で眠っていた少女。すべての記憶を失っている。本当の自分を見つけるために、列車に乗って旅をすることを決めた。約67種の「身の上話」を用意しているらしい。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="height: 300px;">　</p>
+                <div class="card  mx-auto col-md-9 row g-3 mx-auto mt-5" id="section3">
+                    <div class="card-body mt-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <img src="images/姫子.webp" class="img-fluid rounded" alt="姫子">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title"> 姫子</h5>
+                                <p class="card-muted"><small class="text-body-secondary"></small><small
+                                        class="text-muted">
+                                        CV
+                                        田中理恵</small></p>
+                                <p class="card-text">
+                                    星穹列車の修復者。広い星空を見るため、星穹列車に乗ることを決めた。趣味は自分で豆を挽いてコーヒーを淹れること。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="height: 300px;">　</p>
+                <div class="card  mx-auto col-md-9 row g-3 mx-auto mt-5" id="section4">
+                    <div class="card-body mt-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <img src="images/ヴェルト・ヨウ.webp" class="img-fluid rounded" alt="ヴェルト・ヨウ">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title"> ヴェルト・ヨウ</h5>
+                                <p class="card-muted"><small class="text-body-secondary"></small><small
+                                        class="text-muted">
+                                        CV
+                                        細谷佳正</small></p>
+                                <p class="card-text">
+                                    経験豊富で頼れる列車組の先輩。久しぶりの冒険を楽しんでいるうちに、心の中の情熱が再燃した。たまに冒険で経験したことを絵にしてノートにまとめている。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="height: 300px;">　</p>
+                <div class="card  mx-auto col-md-9 row g-3 mx-auto mt-5" id="section5">
+                    <div class="card-body mt-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <img src="images/サンデー.webp" class="img-fluid rounded" alt="サンデー">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title"> サンデー</h5>
+                                <p class="card-muted"><small class="text-body-secondary"></small><small
+                                        class="text-muted">
+                                        CV
+                                        大塚剛央</small></p>
+                                <p class="card-text">
+                                    「秩序」の美しい夢は散ったが、それでも最初の願いをあきらめない者がいる。
+                                    ──翼を失い、地に落ちた旅人よ、その足で次はどこへ向かう？
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p style="height: 300px;">　</p>
+                <div class="card  mx-auto col-md-9 row g-3 mx-auto mt-5" id="section6">
+                    <div class="card-body mt-0">
+                        <div class="row align-items-center">
+                            <div class="col-md-4">
+                                <img src="images/開拓者.webp" class="img-fluid rounded" alt="開拓者">
+                            </div>
+                            <div class="col-8">
+                                <h5 class="card-title"> 開拓者</h5>
+                                <p class="card-muted"><small class="text-body-secondary"></small><small
+                                        class="text-muted">
+                                        CV
+                                        榎木淳弥(男) / 石川由依(女)</small></p>
+                                <p class="card-text">
+                                    星穹列車に乗車した少年/少女。
+                                    星核がもたらす危機を回避するため、星穹列車に同行することを選択した。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card container align-items-center mt-5 bg-gray-transparent">
+        <div class="card-body">
+            <h3 class="card-title fw-bold mb-3 text-light"><i class="bi bi-book"></i> ナナシビトについて</h3>
+            <p class="text-warning">
+                <i>「謎の人物が様々な世界に足を踏み入れ、そして去っていく」——エイドリアン・スペンサー-スミス 『星空に関する寓話集』</i>
+            </p>
+            <p class="text-light">
+                数千年前、星神アキヴィリが世界を旅し、星の海にレールを敷いて世界を繋ぎ、宇宙や探検の伝説を残した。勇敢で好奇心旺盛な人々は、刺激的な冒険に惹かれ、「開拓」の神の足跡を辿るため、銀河探索の旅に加わった。</p>
+            <p class="text-light">
+                旅人たちは自らを「ナナシビト」と名乗り、アキヴィリが創った列車に乗り、レールで結ばれた惑星の間を駆け抜け、刺激的な冒険に出た。伝説によると、「開拓」のアキヴィリは人間と共に行動するのが好きで、異なる世界の酒を飲み、「ナナシビト」と様々な民謡を歌ったという。彼らは列車の軌跡を流れ星の尾のように改造し、人々が首を傾げているのを見ては笑っていた。彼らが窮地に陥った時、神の力を借りて難を逃れたこともある。アキヴィリと信者たちの絆は深く、彼らの冒険に惹かれた異世界の旅人たちが次々と「ナナシビト」になって列車に乗った。
+            </p>
+            <p class="text-light mb-0">
+                アキヴィリが殞落したあと、「ナナシビト」は彼の遺志を継ぎ、いつの日か「開拓」の意志が全宇宙を繋ぐことを信じ、未知の世界を開拓し続けた。彼と彼の跡を追う者を乗せた列車は、今も星々の間を行き来している。噂によると、列車は亡くなった星神の心臓を動力源としており、未知の癌に汚染されたレールを修復しようと奮闘している。
+            </p>
+        </div>
+    </div>
+    <!-- フッター -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-trash3"></i> 崩壊スターレイル</h5>
+                    <p class="text-light">あなたの好きなアニメを見つけて、共有しよう。</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サイト情報</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">利用規約</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">プライバシー</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold mb-3">サポート</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">ヘルプ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">お問い合わせ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold mb-3">フォローする</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-light"><i class="bi bi-twitter fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-instagram fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-youtube fs-4"></i></a>
+                        <a href="#" class="text-light"><i class="bi bi-discord fs-4"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light">
+            <p class="text-center text-light mb-0">&copy; 2025 AniListo. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="backToTopBtn" class="btn shadow d-flex align-items-center justify-content-center">
+        <i class="bi bi-chevron-up"></i>
+    </button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="common.js"></script>
+</body>
+
+</html>
